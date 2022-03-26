@@ -10,7 +10,7 @@
   display: flex;
 }
 
-.grid div {
+.grid-sections {
   border: solid 1px white;
   width: 300px;
   height: 500px;
