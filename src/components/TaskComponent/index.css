@@ -1,0 +1,9 @@
+.task-container {
+  width: 90%;
+  height: 5rem;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  padding: 1rem;
+  cursor: move;
+}
