@@ -8,10 +8,13 @@ function App() {
     ev.preventDefault();
   };
 
+  function drag(ev: any) {
+    ev.dataTransfer.setData('text', ev.target.id);
+  }
+
   const drop = (ev: any) => {
     ev.preventDefault();
-    console.log(ev);
-    var data = ev.dataTransfer.getData('text');
+    let data = ev.dataTransfer.getData('text');
     ev.target.appendChild(document.getElementById(data));
   };
 
@@ -21,18 +24,21 @@ function App() {
       <div className='grid'>
         <div
           className='grid-sections'
+          id='div-1'
           onDrop={(e) => drop(e)}
           onDragOver={(e) => allowDrop(e)}
         >
-          <TaskComponent />
+          <TaskComponent drag={drag} />
         </div>
         <div
           className='grid-sections'
+          id='div-2'
           onDrop={(e) => drop(e)}
           onDragOver={(e) => allowDrop(e)}
         ></div>
         <div
           className='grid-sections'
+          id='div-3'
           onDrop={(e) => drop(e)}
           onDragOver={(e) => allowDrop(e)}
         ></div>
